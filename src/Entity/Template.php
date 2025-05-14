@@ -1,5 +1,7 @@
 <?php
 
+Namespace Entity;
+
 class Template
 {
     public $id;

@@ -1,5 +1,7 @@
 <?php
 
+Namespace Entity;
+
 class Quote
 {
     public $id;
@@ -13,15 +15,5 @@ class Quote
         $this->siteId = $siteId;
         $this->destinationId = $destinationId;
         $this->dateQuoted = $dateQuoted;
-    }
-
-    public static function renderHtml(Quote $quote)
-    {
-        return '<p>' . $quote->id . '</p>';
-    }
-
-    public static function renderText(Quote $quote)
-    {
-        return (string) $quote->id;
     }
 }

@@ -1,6 +1,10 @@
 <?php
 
+namespace Repository;
+
+use Entity\Destination;
 use Faker\Factory;
+use Helper\SingletonTrait;
 
 class DestinationRepository implements Repository
 {
@@ -13,7 +17,7 @@ class DestinationRepository implements Repository
     public function getById($id)
     {
         // DO NOT MODIFY THIS METHOD
-        $generator    = Faker\Factory::create();
+        $generator    = Factory::create();
         $generator->seed($id);
 
         return new Destination(

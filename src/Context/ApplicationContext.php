@@ -1,5 +1,11 @@
 <?php
 
+namespace Context;
+
+use Entity\Site;
+use Entity\User;
+use Helper\SingletonTrait;
+
 class ApplicationContext
 {
     use SingletonTrait;

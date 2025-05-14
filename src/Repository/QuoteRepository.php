@@ -1,5 +1,12 @@
 <?php
 
+namespace Repository;
+
+use DateTime;
+use Entity\Quote;
+use Faker\Factory;
+use Helper\SingletonTrait;
+
 class QuoteRepository implements Repository
 {
     use SingletonTrait;
@@ -12,7 +19,7 @@ class QuoteRepository implements Repository
     public function getById($id)
     {
         // DO NOT MODIFY THIS METHOD
-        $generator = Faker\Factory::create();
+        $generator = Factory::create();
         $generator->seed($id);
 
         return new Quote(

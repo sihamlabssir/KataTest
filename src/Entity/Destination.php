@@ -1,5 +1,7 @@
 <?php
 
+Namespace Entity;
+
 class Destination
 {
     public $id;
