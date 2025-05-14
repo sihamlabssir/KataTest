@@ -8,15 +8,13 @@ use Repository\DestinationRepository;
 use Repository\QuoteRepository;
 use Repository\SiteRepository;
 
-
 class QuoteTextDecoratorTest extends TestCase
 {
     private $siteRepository;
     private $quoteRepository;
-
     private $destinationRepository;
-
     private $quoteRenderer;
+
     protected function setUp()
     {
         $this->quoteRepository = $this->createMock(QuoteRepository::class);
@@ -24,6 +22,7 @@ class QuoteTextDecoratorTest extends TestCase
         $this->destinationRepository = $this->createMock(DestinationRepository::class);
         $this->quoteRenderer = new QuoteRenderer();
     }
+
     public function testDecorateWithPlaceholders()
     {
         $quote = new Quote(123, 1, 2, '2023-01-01');

@@ -1,42 +1,49 @@
-# Refactoring Kata Test
+# KATA TEST
 
-## Introduction
+This project is to refactor the original KATA TEST, `TemplateManager` which build a template to send the users arguments like "username", "destination"...
 
-Let's say we are a company specialized in merchandise transport in different countries, and we have some message templates we want to send
-in different languages. To do that, we've developed `TemplateManager` whose job is to replace
-placeholders in texts by travel related information.
+Refactoring work
+- 
+- Separating responsibilities by breaking the code to difference services which handles a specific data decorating `QuoteTextDecorator` & `UserTextDecorator` so any new content decorating will only need to implement the interface `TextDecoratorInterface`.
+- Using namespaces by using PS4 autoloader
+- Cleaning Entities so they can be Repositories specific and hold no business logic (Database specific), in my case removed rendering methods from Quote Entity.
+- Use the new decorators in the Template Manager service and improve the code readability without changing the method signature.
 
-`TemplateManager` is a class that's been around for years and nobody really knows who coded
-it or how it really works. Nonetheless, as the business changes frequently, this class has
-already been modified many times, making it harder to understand at each step.
+Future ideas and improvements
+-
+- Use clean architecture to better organise the code and introduce `Infrastructure`, `Application` & `Domain` Layers.
+- Implement integration tests
+- Introduce strict typing (scalar types for PHP 7) and upgrading PHP version to 8+
+- Translation for content in templates (more a product feature)
+- Extend the solution to support other text decorators for other entities `Destinitation` ...
 
-Today, once again, the PO wants to add some new stuff to it and add the management for a new
-placeholder. But this class is already complex enough and just adding a new behaviour to it
-won't work this time.
+## ✅ Requirements
 
-Your mission, should you decide to accept it, is to **refactor `TemplateManager` to make it
-understandable by the next developer** and easy to change afterwards. Now is the time for you to
-show your exceptional skills and make this implementation better, extensible, and ready for future
-features.
+- PHP 5.5.9 or higher (compatible with PHP 7)
+- Composer
 
-Sadly for you, the public method `TemplateManager::getTemplateComputed` is called everywhere, 
-and **you can't change its signature**. But that's the only one you can't modify (unless explicitly
-forbidden in a code comment), **every other class is ready for your changes**.
+## 📦 Installation
 
-This exercise **was made to not last longer than 1 hour** but we know that this can be too short to do it all and
-you might take longer if you want. Stop when you feel you've done something you feel comfortable sharing with us.
+1. **Clone the project**
+```bash
+git clone https://github.com/sihamlabssir/KataTest.git
+```
 
-You can run the example file to see the method in action.
+2. **Install dependencies**
+```bash
+composer install
+```
 
-## Rules
-There are some rules to follow:
- - You must commit regularly
- - You must not modify code when comments explicitly forbid it
+3. **Generate the autoloader**
+```bash
+composer dump-autoload
+```
 
-## Deliverables
-What do we expect from you:
- - the link of the git repository
- - several commits, with an explicit message each time
- - a file / message / email explaining your process and principles you've followed
-
-**Good luck!**
+4. **Run the application**
+```bash
+php -S localhost:8080 -t example
+```
+5. **Test**
+```bash
+http://localhost:8080/example.php
+```
